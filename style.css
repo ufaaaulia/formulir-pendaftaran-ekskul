@@ -1,78 +1,130 @@
+/* Reset dasar untuk kerapian margin dan padding */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Background gradasi modern bernuansa futuristik */
 body {
-	background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff);
-	background-size: 400% 400%;
-	animation: gradientshift 12s ease infinite;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-@keyframes gradientshift {
-	0% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0% 50%; }
+/* Kotak Kontainer Pengumuman */
+.announcement-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 35px;
+    border-radius: 16px;
+    /* KUNCI UTAMA: Garis tepi samping yang tebal & mencolok */
+    border-left: 8px solid #ff4757;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.form-card {
-	background: rgba(255, 255, 255, 0.95);
-	backdrop-filter: blur(10px);
-	width: 100%;
-	max-width: 420px;
-	padding: 30px;
-	border-radius: 20px;
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-	border: 2px solid rgba(255, 255, 255, 0.6);
+/* Efek kemunculan halus */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.form-header {
-	text-align: center;
-	margin-bottom: 25px;
+/* Badge Status */
+.badge-urgent {
+    background-color: #ff4757;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
 }
 
-.badge {
-	background: #ff4757;
-	color: white;
-	font-size: 11px;
-	font-weight: bold;
-	padding: 4px 12px;
-	border-radius: 20px;
-	display: inline-block;
-	margin-bottom: 10px;
-	letter-spacing: 0.5px;
+/* Judul Utama */
+.announcement-card h1 {
+    font-size: 24px;
+    color: #1e272e;
+    margin-bottom: 8px;
+    line-height: 1.3;
 }
 
-.form-header h2 {
-	font-size: 24px;
-	color: #2f3640;
-	margin-bottom: 5px;
+/* Informasi Tanggal */
+.date {
+    font-size: 13px;
+    color: #00a8ff;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-.form-header p {
-	font-size: 13px;
-	color: #718093;
+/* Deskripsi Singkat */
+.description {
+    font-size: 14px;
+    color: #57606f;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.input-group {
-	margin-bottom: 18px;
+/* Styling Daftar Poin (List) */
+.guidelines {
+    list-style-type: none;
+    margin-bottom: 25px;
+    background: #f1f2f6;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px dashed #ced6e0;
 }
 
-.btn-submit:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 7px 20px rgba(255, 71, 87, 0.5);
+.guidelines li {
+    font-size: 14px;
+    color: #2f3640;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
 }
 
-.btn-submit:active {
-	transform: translateY(0);
+/* Membuat ikon centang/titik custom pada list */
+.guidelines li::before {
+    content: "📌";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
 }
 
+.guidelines li:last-child {
+    margin-bottom: 0;
+}
 
+/* Tombol Unduh / Aksi */
+.action-box {
+    text-align: right;
+}
 
+.btn-download {
+    display: inline-block;
+    background: linear-gradient(135deg, #2ed573, #26af5f);
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(46, 213, 115, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 213, 115, 0.4);
+}
